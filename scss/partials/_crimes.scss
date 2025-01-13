@@ -3,53 +3,85 @@ $cardsize: 420px;
 .crimes {
   display:grid; grid-template-columns: repeat(auto-fill, minmax($cardsize, 1fr)); gap: $gap; padding:$padding;
 
-  .crime { padding:$padding; background:#fff; font-size:20px;  border-radius: 3px; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    .details { width:100%; display: grid; grid-template-columns: 1fr 1fr 1fr 85px; //grid-template-columns: repeat(4, 1fr);
-      .name, .price { font-size:140%; }
-      .name { grid-column: span 3; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; position: relative; z-index: 3;
+  .crime { background:#fff; font-size:20px;  border-radius: 3px; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; display: flex; flex-direction: column; align-items: stretch;
+    
+
+
+    .dish {
+      header { padding:$padding; display:grid; grid-template-columns: 1fr 9ch; gap:10px;
+        .name, .price { font-size:140%; }
+        .price { text-align: right;
+          abbr { text-decoration: none; cursor: help;}
+        }
+      .name { white-space: nowrap; overflow:hidden; text-overflow: ellipsis; position: relative; z-index: 3;
         &:hover { overflow: visible; padding-right: 0.35em; }
       }
-      abbr { text-decoration: none; cursor: help; white-space: nowrap;
-        sup { font-size:80%; padding-right: 0.1em; }
       }
-      figure { grid-column: span 4; margin: $padding (0 - $padding); height:16em;  background-size: cover; background-position: center;
-        img { height: 100%; width:100%; object-fit: cover; object-position: center; }
+      figure { position: relative;
+        &:before { position: absolute; inset: 0; content: ''; box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);}
       }
+      img { display: block; width:100%; height: auto; aspect-ratio: 16/9; object-fit: cover; object-position: center; }
+      .description-and-requirements { padding:$padding; display: grid; grid-template-columns: 1fr 120px; gap:$padding;}
+    }
 
-      .description { grid-column: span 3; padding-right: 1em;
-        p {
-          &:before { content: '“'; }
-          &:after  { content: '”'; }
+
+    .requirements {
+      li.yes { 
+        &:before { content: '✔️'; padding-right: 0.5em;}
+      }
+      li.no { cursor: help; position: relative;
+        &:before { content: '❌'; padding-right: 0.5em; text-decoration: none; }
+      }
+    }
+    .place { padding:0 $padding $padding $padding; margin-top:auto;
+      .location { display: flex; gap:10px; flex-wrap: wrap; }
+      .place-name { font-weight: $bold;}
+      .region {
+        // &:before { content: ' | '; padding-right: 0.5em; }
+      }
+    }
+
+    &.report {
+      header { grid-template-columns: 1fr;
+        // .name { grid-column: span 2; }
+      }
+      .description-and-requirements { grid-template-columns: 1fr;
+        p { margin-bottom: 0.75em;}
+      }
+    }
+
+
+    // .details {
+    //   figure { grid-column: span 4; margin: $padding (0 - $padding); height:16em;  background-size: cover; background-position: center;
+    //     img { height: 100%; width:100%; object-fit: cover; object-position: center; }
+    //   }
+
+    //   .description { grid-column: span 3; padding-right: 1em;
+    //     p {
+    //       &:before { content: '“'; }
+    //       &:after  { content: '”'; }
     
-          &.empty { font-style: italic;
-            &:before, &:after { content:''; }
-          }
-        }
-      }
-
-      .requirements {
-        li.yes { 
-          &:before { content: '✔️'; padding-right: 0.5em;}
-        }
-        li.no { cursor: help;
-          &:before { content: '❌'; padding-right: 0.5em; text-decoration: none; }
-        }
-      }
-
-    }
+    //       &.empty { font-style: italic;
+    //         &:before, &:after { content:''; }
+    //       }
+    //     }
+    //   }
 
 
-    .location { width:100%; padding-top:$padding;
-      .place-name, .region { display: inline-block; }
-      .place-name { font-weight: $bold; }
-      .region { 
-        &:before { content: ' | '; }
-      }
+    // }
 
-      //-.place-name { grid-column: span 4; }
-    }
+    // .place { margin-top:auto; }
+
+    // .location { width:100%; padding-top:$padding;
+    //   .place-name, .region { display: inline-block; }
+    //   .place-name { font-weight: $bold; }
+    //   .region { 
+    //     &:before { content: ' | '; }
+    //   }
+
+    //   //-.place-name { grid-column: span 4; }
+    // }
   }
 }
 
