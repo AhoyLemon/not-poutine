@@ -1,4 +1,4 @@
-# Not Poutine, FYI
+![That's not poutine](https://notpoutine.ahoylemon.xyz/og-image2.webp)
 
 The purpose of this site is to catlog menu items which are descibed as poutine and yet are not poutine.
 
