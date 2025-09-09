@@ -3,6 +3,23 @@ const siteURL = "https://ahoylemon.github.io/notpoutine.fyi";
 const crimes = [
 
   {
+    name:        "Dill Pickle Poutine",
+    place:       "Attavio's Fries (MN State Fair)",
+    pic:         "dill-pickle-poutine.webp",
+    city:        "Falcoln Heights",
+    state:       "MN",
+    country:     "US",
+    map:         "https://www.google.com/maps/place/The+Lobster+Shanty/@42.5203128,-70.8946345,15z/data=!4m5!3m4!1s0x0:0x20921dee29f4ddd5!8m2!3d42.5203128!4d-70.8946345",
+    price:       22.13,
+    description: `Our fresh cut fries are topped with cheese curds, dill pickle chips and drizzled with our homemade dill ranch sauce!`,
+    requirements: {
+          fries: true,
+          curds: true,
+          gravy: false
+    }
+  },
+
+  {
     name:        "Hypernova Scotia",
     place:       "The Lobster Shanty",
     pic:         "hypernova.jpg",
@@ -21,7 +38,7 @@ const crimes = [
 
   {
     name:        "Sweet Potato Poutine",
-    place:       "The Blue Barn (Minnesota State Fair)",
+    place:       "The Blue Barn (MN State Fair)",
     pic:         "statefair-sweetpotato.jpg",
     city:        "Falcon Heights",
     state:       "MN",
@@ -574,7 +591,7 @@ const crimes = [
     requirements: {
       fries: true,
       curds: false,
-      gravy: false
+      gravy: true
     } 
   },
 
